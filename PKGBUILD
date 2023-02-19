@@ -3,7 +3,7 @@
 
 pkgname=uboot-orangepi5
 pkgver=2017.09
-pkgrel=1
+pkgrel=2
 pkgdesc='U-Boot for Orange Pi 5'
 arch=('aarch64')
 url='https://github.com/orangepi-xunlong/u-boot-orangepi'

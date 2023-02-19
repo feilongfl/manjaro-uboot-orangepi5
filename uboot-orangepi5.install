@@ -1,13 +1,28 @@
 create_config() {
   mkdir -p /boot/extlinux
-  echo "LABEL Orangepi OS
+  echo "LABEL Manjaro ARM
 LINUX /Image
-INITRD /initramfs-linux.img
 FDT /dtbs/rockchip/rk3588s-orangepi-5.dtb
-APPEND earlyprintk console=tty1 consoleblank=0 rw rootwait root=/dev/mmcblk1p2  audit=0 cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory swapaccount=1 irqchip.gicv3_pseudo_nmi=0 switolb=1 coherent_pool=2M" \
+APPEND initrd=/initramfs-linux.img console=ttyS2,1500000 root=LABEL=ROOT_MNJRO rw rootwait audit=0 splash plymouth.ignore-serial-consoles" \
     > /boot/extlinux/extlinux.conf
 }
 
 post_install() {
   create_config
 }
+
+post_upgrade() {
+    # Provide the instructions
+   
+    if [ -f /boot/extlinux/extlinux.conf.pacsave ]; then
+        echo "Picking up /boot/extlinux/extlinux.conf.pacsave..."
+        mv -f /boot/extlinux/extlinux.conf.pacsave /boot/extlinux/extlinux.conf
+    fi
+
+   if [ -f /boot/extlinux/extlinux.conf ]; then
+     echo "Nothing to do"
+    else
+        create_config
+    fi
+}
+
