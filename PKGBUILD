@@ -11,11 +11,11 @@ license=('GPL')
 makedepends=('wget' 'python' 'dtc' 'git')
 install=${pkgname}.install
 _binsite="https://github.com/armbian/rkbin/raw"
-_bincommit="1f2bd43aa12942849ec0f0e7ce26930865076bf3"
+_bincommit="5d409529dbbc12959111787e77c349b3e832bc52"
 source=(
   "git+https://github.com/orangepi-xunlong/u-boot-orangepi.git#branch=v2017.09-rk3588"
-  "src/rk3588_ddr.bin::$_binsite/$_bincommit/rk35/rk3588_ddr_lp4_2112MHz_lp5_2736MHz_v1.08.bin"
-  "src/rk3588_bl31.elf::$_binsite/$_bincommit/rk35/rk3588_bl31_v1.28.elf"
+  "src/rk3588_ddr.bin::$_binsite/$_bincommit/rk35/rk3588_ddr_lp4_2112MHz_lp5_2736MHz_v1.09.bin"
+  "src/rk3588_bl31.elf::$_binsite/$_bincommit/rk35/rk3588_bl31_v1.32.elf"
 )
 md5sums=(SKIP SKIP SKIP)
 
