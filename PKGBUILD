@@ -1,10 +1,11 @@
 # Contributor: Kali Prasad <kprasadvnsi@protonmail.com>
+# Contributor: YuLong Yao <feilongphone@gmail.com>
 # Maintainer: Furkan Kardame <f.kardame@manjaro.org>
 
-pkgname=uboot-orangepi5
+pkgname=uboot-orangepi5-plus
 pkgver=2017.09
-pkgrel=2
-pkgdesc='U-Boot for Orange Pi 5'
+pkgrel=1
+pkgdesc='U-Boot for Orange Pi 5+'
 arch=('aarch64')
 url='https://github.com/orangepi-xunlong/u-boot-orangepi'
 license=('GPL')
@@ -26,7 +27,7 @@ build() {
 
   unset CFLAGS CXXFLAGS CPPFLAGS LDFLAGS
 
-  make orangepi_5_defconfig
+  make orangepi_5_plus_defconfig
   export KCFLAGS='-Wno-error=address'
   make BL31="${srcdir}/rk3588_bl31.elf" spl/u-boot-spl.bin u-boot.dtb u-boot.itb
 

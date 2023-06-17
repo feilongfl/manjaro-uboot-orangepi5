@@ -2,7 +2,7 @@ create_config() {
   mkdir -p /boot/extlinux
   echo "LABEL Manjaro ARM
 LINUX /Image
-FDT /dtbs/rockchip/rk3588s-orangepi-5.dtb
+FDT /dtbs/rockchip/rk3588-orangepi-5-plus.dtb
 APPEND initrd=/initramfs-linux.img console=ttyS2,1500000 root=LABEL=ROOT_MNJRO rw rootwait audit=0 splash plymouth.ignore-serial-consoles" \
     > /boot/extlinux/extlinux.conf
 }
